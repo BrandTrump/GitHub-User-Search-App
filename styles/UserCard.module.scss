@@ -1,0 +1,59 @@
+.card_container {
+  display: flex;
+  gap: 3em;
+  background: rgb(31 42 72);
+  margin-top: 3em;
+  padding: 3em;
+  border-radius: 1em;
+}
+
+.user_image {
+  border-radius: 50%;
+}
+
+.user_details_container {
+  flex: 1;
+}
+
+.user_info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_name_info {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  h1 {
+    margin: 0;
+  }
+  h2 {
+    margin: 0;
+  }
+  h3 {
+    margin: 0;
+  }
+}
+
+.stats_container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3em;
+  background: #141c2f;
+  border-radius: 0.6em;
+  padding: 0.5em;
+}
+
+.user_links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  margin-top: 2em;
+}
+
+.user_profile_link {
+  color: white;
+  text-decoration: none;
+}

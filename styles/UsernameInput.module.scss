@@ -1,0 +1,29 @@
+.form_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    flex: 1;
+    padding: 1.1em;
+    background: rgb(31 42 72);
+    border: none;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    color: white;
+
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  button {
+    padding: 0 2em;
+    background: rgb(0 121 254);
+    border: none;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    color: white;
+    cursor: pointer;
+  }
+}
