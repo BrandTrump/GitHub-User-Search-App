@@ -30,6 +30,7 @@
   }
   h2 {
     margin: 0;
+    color: #0079fb;
   }
   h3 {
     margin: 0;
@@ -51,9 +52,27 @@
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
   margin-top: 2em;
+  column-gap: 4em;
 }
 
 .user_profile_link {
   color: white;
   text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.user_stat {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.no_info {
+  color: #8e94a4;
 }
