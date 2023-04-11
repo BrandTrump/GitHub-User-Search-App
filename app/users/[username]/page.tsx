@@ -3,6 +3,7 @@ import useSWR from "swr";
 import styles from "@/styles/UserCard.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { formatDate } from "@/helper/formatDate";
 
 type Props = {
   params: { username: string };
@@ -32,7 +33,7 @@ function UserPage({ params: { username } }: Props) {
             <h2>@{data.login}</h2>
             <h3>{data.bio ? data.bio : "This profile has no bio"}</h3>
           </div>
-          <h3>{data.created_at}</h3>
+          <h3>Joined {formatDate(data.created_at)}</h3>
         </div>
 
         <div className={styles.stats_container}>
