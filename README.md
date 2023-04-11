@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Learnings
 
-- Next.js 13.2 custom route handlers: (htps://nextjs.org/blog/next-13-2#custom-route-handlers).
+- Next.js 13.2 custom route handlers: (https://nextjs.org/blog/next-13-2#custom-route-handlers).
 
 ```js
 import { NextResponse } from "next/server";
