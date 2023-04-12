@@ -1,7 +1,7 @@
 .card_container {
   display: flex;
   gap: 3em;
-  background: rgb(31 42 72);
+  background: var(--card-foreground);
   margin-top: 3em;
   padding: 3em;
   border-radius: 1em;
@@ -30,7 +30,7 @@
   }
   h2 {
     margin: 0;
-    color: #0079fb;
+    color: var(--highlight);
   }
   h3 {
     margin: 0;
@@ -41,7 +41,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 3em;
-  background: #141c2f;
+  background: var(--stats-foreground);
   border-radius: 0.6em;
   padding: 0.5em;
 }
@@ -56,7 +56,7 @@
 }
 
 .user_profile_link {
-  color: white;
+  color: var(--foreground);
   text-decoration: none;
   font-size: 1.3rem;
 }
@@ -75,4 +75,18 @@
 
 .no_info {
   color: #8e94a4;
+}
+
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  margin-top: 5em;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
 }

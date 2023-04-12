@@ -1,4 +1,18 @@
 .heading_container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background: 1px solid salmon;
+}
+
+.sun {
+  cursor: pointer;
+  width: 2.5em;
+  height: 2.5em;
+  color: yellow;
+}
+.moon {
+  cursor: pointer;
+  width: 2.5em;
+  height: 2.5em;
 }

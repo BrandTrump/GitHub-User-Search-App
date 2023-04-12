@@ -6,24 +6,24 @@
   input {
     flex: 1;
     padding: 1.1em;
-    background: rgb(31 42 72);
+    background: var(--card-foreground);
     border: none;
     border-top-left-radius: 0.5em;
     border-bottom-left-radius: 0.5em;
-    color: white;
+    color: var(--foreground);
 
     &::placeholder {
-      color: white;
+      color: var(--foreground);
     }
   }
 
   button {
     padding: 0 2em;
-    background: rgb(0 121 254);
+    background: var(--highlight);
     border: none;
     border-top-right-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
-    color: white;
+    color: var(--foreground);
     cursor: pointer;
   }
 }
