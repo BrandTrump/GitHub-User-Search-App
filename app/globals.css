@@ -1,12 +1,25 @@
 :root {
   font-size: 62.5%;
+  --background: #fafafa;
+  --foreground: black;
+  --card-foreground: #e1e9b7;
+  --stats-foreground: #d0b783;
+  --highlight: #f96161;
+}
+
+[data-theme="dark"] {
+  --background: rgb(20 28 47);
+  --foreground: white;
+  --card-foreground: rgb(31 42 72);
+  --stats-foreground: #141c2f;
+  --highlight: #0079fb;
 }
 
 body {
   margin: 2em;
   padding: 0;
-  background-color: rgb(20 28 47);
-  color: white;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 @media screen and (min-width: 700px) {
