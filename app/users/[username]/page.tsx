@@ -14,7 +14,7 @@ function UserPage({ params: { username } }: Props) {
     fetch(`/api/users/${username}`).then((res) => res.json());
   const { data, isLoading } = useSWR("user", fetchUser);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div className={styles.loading}>Loading</div>;
   return (
     <div className={styles.card_container}>
       <div>
