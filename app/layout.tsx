@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import "./globals.css";
 import UsernameInput from "@/components/UsernameInput";
 import { Roboto, Roboto_Mono } from "next/font/google";
+import Provider from "@/components/Provider";
 
 export const metadata = {
   title: "GitHub User Search",
@@ -18,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={robotoMono.className}>
-        <Header />
-        <UsernameInput />
-        {children}
+        <Provider>
+          <Header />
+          <UsernameInput />
+          {children}
+        </Provider>
       </body>
     </html>
   );
