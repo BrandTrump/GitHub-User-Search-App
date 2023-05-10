@@ -12,14 +12,15 @@ type Props = {
 function UserPage({ params: { username } }: Props) {
   const fetchUser = () =>
     fetch(`/api/users/${username}`).then((res) => res.json());
-  const { data, isLoading } = useSWR("user", fetchUser);
+  const { data, isLoading } = useSWR<Profile>("user", fetchUser);
+  console.log(username);
 
   if (isLoading) return <div className={styles.loading}>Loading</div>;
   return (
     <div className={styles.card_container}>
       <div>
         <Image
-          src={data.avatar_url}
+          src={data!.avatar_url}
           alt="profile pic"
           width={90}
           height={90}
@@ -29,25 +30,25 @@ function UserPage({ params: { username } }: Props) {
       <div className={styles.user_details_container}>
         <div className={styles.user_info}>
           <div className={styles.user_name_info}>
-            <h1>{data.name}</h1>
-            <h2>@{data.login}</h2>
-            <h3>{data.bio ? data.bio : "This profile has no bio"}</h3>
+            <h1>{data!.name}</h1>
+            <h2>@{data!.login}</h2>
+            <h3>{data!.bio ? data!.bio : "This profile has no bio"}</h3>
           </div>
-          <h3>Joined {formatDate(data.created_at)}</h3>
+          <h3>Joined {formatDate(data!.created_at)}</h3>
         </div>
 
         <div className={styles.stats_container}>
           <div>
             <h2>Reops</h2>
-            <h1>{data.public_repos}</h1>
+            <h1>{data!.public_repos}</h1>
           </div>
           <div>
             <h2>Followers</h2>
-            <h1>{data.followers}</h1>
+            <h1>{data!.followers}</h1>
           </div>
           <div>
             <h2>Following</h2>
-            <h1>{data.following}</h1>
+            <h1>{data!.following}</h1>
           </div>
         </div>
 
@@ -72,7 +73,7 @@ function UserPage({ params: { username } }: Props) {
                 d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
               />
             </svg>
-            <p>{data.location ? data.location : "Not Available"}</p>
+            <p>{data!.location ?? "Not Available"}</p>
           </div>
 
           <div className={styles.user_stat}>
@@ -90,9 +91,7 @@ function UserPage({ params: { username } }: Props) {
                 d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
               />
             </svg>
-            <p>
-              {data.twitter_username ? data.twitter_username : "Not Available"}
-            </p>
+            <p>{data!.twitter_username ?? "Not Available"}</p>
           </div>
           <div className={styles.user_stat}>
             <svg
@@ -110,8 +109,8 @@ function UserPage({ params: { username } }: Props) {
               />
             </svg>
 
-            <Link href={data.html_url} className={styles.user_profile_link}>
-              {data.html_url}
+            <Link href={data!.html_url} className={styles.user_profile_link}>
+              {data!.html_url}
             </Link>
           </div>
           <div className={styles.user_stat}>
@@ -130,7 +129,7 @@ function UserPage({ params: { username } }: Props) {
               />
             </svg>
 
-            <p>{data.company ? data.company : "Not Available"}</p>
+            <p>{data!.company ?? "Not Available"}</p>
           </div>
         </div>
       </div>

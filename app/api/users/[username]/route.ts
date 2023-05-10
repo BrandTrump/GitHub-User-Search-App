@@ -17,6 +17,6 @@ export async function GET(request: Request, { params: { username } }: Props) {
     },
   });
 
-  const userInfo = user.data;
+  const userInfo: Profile = user.data;
   return NextResponse.json(userInfo);
 }
