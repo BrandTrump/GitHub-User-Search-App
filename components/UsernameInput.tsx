@@ -17,13 +17,15 @@ function UsernameInput() {
 
   return (
     <form onSubmit={findUser} className={styles.form_container}>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Search for user..."
-      />
-      <button type="submit">Search</button>
+      <div className={styles.input_field}>
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Search for user..."
+        />
+        <button type="submit">Search</button>
+      </div>
     </form>
   );
 }
